@@ -25,6 +25,9 @@
     <Compile Include="CV_Detection.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="open_snake.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="snake_rl.py" />
   </ItemGroup>
   <ItemGroup>
