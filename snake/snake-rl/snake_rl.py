@@ -3,9 +3,9 @@ from open_snake import *
 
 def main():
 
-    run_open_snake()   #olek: run gui
-
-    ImageDetection = CVDetector()
+    run_snake()   #olek: run gui
+    #ImageDetection = CVDetector()
+<<<<<<< .mine    ImageDetection = CVDetector()
     print("Foo")
-
+=======>>>>>>> .theirs
 main()
