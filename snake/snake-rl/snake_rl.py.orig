@@ -1,0 +1,16 @@
+from CV_Detection import *
+from open_snake import *
+
+def main():
+
+<<<<<<< HEAD
+    run_open_snake()   #olek: run gui
+
+    ImageDetection = CVDetector()
+    print("Foo")
+=======
+    run_snake()   #olek: run gui
+    #ImageDetection = CVDetector()
+>>>>>>> 1d9216adaafb20795324eb894a3592447b5a2a56
+
+main()
