@@ -6,7 +6,7 @@ class CVDetector:
     m_mat = np.zeros((256, 256, 1), dtype = "uint8")
 
 
-    def main_loop():
+    def main_loop(self):
         #while(True):
             printscreen_pil = ImageGrab.grab()
             printscreen_numpy = np.array(printscreen_pil.getdata(),dtype='uint8')\
