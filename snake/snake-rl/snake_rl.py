@@ -6,13 +6,16 @@ def main():
 
     try:
         handler = AppHandler()
-        ImageDetection = CVDetector()
+        #ImageDetection = CVDetector()
 
-        handler.Open()
+        handler.open()
+        time.sleep(5)
+        handler.do_left()
+        time.sleep(3)
     except():
         print("Error")
     finally:
-        handler.Close()
+        handler.close()
 
 
 main()
