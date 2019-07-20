@@ -6,11 +6,16 @@ def main():
 
     try:
         handler = AppHandler()
-        #ImageDetection = CVDetector()
+        ImageDetection = CVDetector()
 
         handler.open()
-        time.sleep(5)
-        handler.do_left()
+        #Getters test
+        print(handler.Xpos())
+        print(handler.Ypos())
+        print(handler.Width())
+        print(handler.Height())
+
+        handler.move_left()
         time.sleep(3)
     except():
         print("Error")
