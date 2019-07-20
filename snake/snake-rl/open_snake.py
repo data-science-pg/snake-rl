@@ -26,6 +26,7 @@ class AppHandler:
         pyautogui.press('left')
     
         #win32gui.SetActiveWindow(hwndCurrent)
+
     
     def close(self):
        # if self.app_instance!=None:

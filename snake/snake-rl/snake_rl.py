@@ -9,6 +9,7 @@ def main():
         ImageDetection = CVDetector()
 
         handler.open()
+
         #Getters test
         print(handler.Xpos())
         print(handler.Ypos())
