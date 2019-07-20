@@ -11,6 +11,7 @@ def main():
         handler.open()
         time.sleep(5)
         handler.do_left()
+        print(handler.get_hwnd_main())
         time.sleep(3)
     except():
         print("Error")
