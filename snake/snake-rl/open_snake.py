@@ -19,15 +19,7 @@ class AppHandler:
         self.__app_instance = subprocess.Popen(self.__snake_exec_path)
         time.sleep(5)
         self.__hwnd_main = win32gui.FindWindow(None,"Snake")
-    
-    def move_left(self):    #not working yet
-        #hwndCurrent = win32gui.GetActiveWindow()
-        #result = win32gui.SetActiveWindow(handle)
-        pyautogui.press('left')
-    
-        #win32gui.SetActiveWindow(hwndCurrent)
-
-    
+        
     def close(self):
        # if self.app_instance!=None:
        if type(self.__app_instance) == subprocess.Popen:

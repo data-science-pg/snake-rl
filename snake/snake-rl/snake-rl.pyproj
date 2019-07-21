@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>snake-rl</Name>
     <RootNamespace>snake-rl</RootNamespace>
-    <InterpreterId>CondaEnv|CondaEnv|Anaconda3</InterpreterId>
+    <InterpreterId>Global|ContinuumAnalytics|Anaconda37-64</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -25,6 +25,9 @@
     <Compile Include="CV_Detection.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="movement.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="open_snake.py">
       <SubType>Code</SubType>
     </Compile>
@@ -32,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="CondaEnv|CondaEnv|Anaconda3" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|env1" />
+    <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda37-64" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
