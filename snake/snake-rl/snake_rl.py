@@ -16,6 +16,7 @@ def main():
         print(handler.Width())
         print(handler.Height())
 
+        ImageDetection.main_loop(handler)
         handler.move_left()
         time.sleep(3)
     except():
