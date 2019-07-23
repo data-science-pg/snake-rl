@@ -20,6 +20,9 @@ def main():
 
         time.sleep(10)
         movement.move_left()
+        movement.move_right()
+        movement.move_up()
+        movement.move_down()
         time.sleep(3)
     except():
         print("Error")
