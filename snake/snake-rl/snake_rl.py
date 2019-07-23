@@ -8,8 +8,7 @@ def main():
     try:
         handler = AppHandler()
         ImageDetection = CVDetector()
-        movement = Movement()
-
+        
         handler.open()
 
         #Getters test
@@ -19,10 +18,11 @@ def main():
         print(handler.Height())
 
         time.sleep(10)
-        movement.move_left()
-        movement.move_right()
-        movement.move_up()
-        movement.move_down()
+        Movement.move_left()
+        Movement.move_right()
+        Movement.move_up()
+        Movement.move_down()
+
         time.sleep(3)
     except():
         print("Error")
