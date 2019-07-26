@@ -1,19 +1,25 @@
 import pyautogui
 
 class Movement:
-    def move_left(self):    #not working yet
+
+    @staticmethod
+    def move_left():    #not working yet
         #hwndCurrent = win32gui.GetActiveWindow()
         #result = win32gui.SetActiveWindow(handle)
         pyautogui.press('left')
     
         #win32gui.SetActiveWindow(hwndCurrent)
-    def move_right(self):
+
+    @staticmethod
+    def move_right():
         pyautogui.press("right")
 
-    def move_down(self):
+    @staticmethod
+    def move_down():
         pyautogui.press("down")
 
-    def move_up(self):
+    @staticmethod
+    def move_up():
         pyautogui.press("up")
 
 

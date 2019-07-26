@@ -2,14 +2,14 @@ from CV_Detection import *
 from open_snake import *
 import time
 from movement import *
+from multiprocessing import Process
 
 def main():
 
     try:
         handler = AppHandler()
         ImageDetection = CVDetector()
-        movement = Movement()
-
+        
         handler.open()
 
         #Getters test
@@ -19,15 +19,24 @@ def main():
         print(handler.Height())
 
 <<<<<<< HEAD
-        ImageDetection.main_loop(handler)
-        handler.move_left()
-=======
-        time.sleep(10)
+        time.sleep(3)
+
+        movement.move_left()
+        p1=Process(target=ImageDetection.main_loop(handler))
+        p1.start()
+
         movement.move_left()
         movement.move_right()
         movement.move_up()
         movement.move_down()
->>>>>>> bacea4fab2c7ea0c2691dadfc32dc3c658e33b97
+=======
+        time.sleep(10)
+        Movement.move_left()
+        Movement.move_right()
+        Movement.move_up()
+        Movement.move_down()
+
+>>>>>>> 53886792274eb1235035e6694b02cc1fccc6558a
         time.sleep(3)
     except():
         print("Error")
