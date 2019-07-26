@@ -9,7 +9,6 @@ def main():
     try:
         handler = AppHandler()
         ImageDetection = CVDetector()
-        movement = Movement()
 
         handler.open()
 
@@ -21,14 +20,14 @@ def main():
 
         time.sleep(3)
 
-        movement.move_left()
+        Movement.move_left()
         p1=Process(target=ImageDetection.main_loop(handler))
         p1.start()
 
-        movement.move_left()
-        movement.move_right()
-        movement.move_up()
-        movement.move_down()
+        Movement.move_left()
+        Movement.move_right()
+        Movement.move_up()
+        Movement.move_down()
         time.sleep(3)
     except():
         print("Error")
