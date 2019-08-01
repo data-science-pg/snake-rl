@@ -11,10 +11,23 @@ class CVDetector:
         __main_window = cv2.namedWindow("Snake Window")
 
         while(app_handle.IsOpen()):
-            __printscreen_pil = ImageGrab.grab(app_handle.Rect())
+            rect = app_handle.Rect()
+            if rect is None:
+                break
+
+            __printscreen_pil = ImageGrab.grab(rect)
             __printscreen_numpy = np.array(__printscreen_pil.getdata(),dtype='uint8').reshape((__printscreen_pil.size[1],__printscreen_pil.size[0],3))
             
+            width = app_handle.Width()
+            height = app_handle.Height()
+
+            if height is None or width is None:
+                break
+
+            __printscreen_numpy = cv2.resize(__printscreen_numpy,(int(width/2),int(height/2)))
+
             CVDetector.swap_channels(__printscreen_numpy,0,2)
+ 
             
             cv2.imshow("Snake Window",__printscreen_numpy)
             if cv2.waitKey(25) & 0xFF == ord('q'):

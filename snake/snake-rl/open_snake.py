@@ -26,32 +26,32 @@ class AppHandler:
             self.__app_instance.terminate()
 
     def Xpos(self):
-        if(self.__hwnd_main == 0):
-            return 0
+        if(False==self.IsOpen()):
+            return None
         return win32gui.GetWindowRect(self.__hwnd_main)[0]
 
     def Ypos(self):
-        if(self.__hwnd_main == 0):
-            return 0
+        if(False==self.IsOpen()):
+            return None
         return  win32gui.GetWindowRect(self.__hwnd_main)[1]
 
     def Width(self):
-        if(self.__hwnd_main == 0):
-            return 0
+        if(False==self.IsOpen()):
+            return None
         return win32gui.GetWindowRect(self.__hwnd_main)[2] - self.Xpos()
 
     def Height(self):
-        if(self.__hwnd_main == 0):
-            return 0
+        if(False==self.IsOpen()):
+            return None
         return win32gui.GetWindowRect(self.__hwnd_main)[3] - self.Ypos()
 
     def Rect(self):
-        if(self.__hwnd_main == 0):
-            return 0
+        if(False==self.IsOpen()):
+            return None
         return win32gui.GetWindowRect(self.__hwnd_main)
 
     def IsOpen(self):
-        if(self.__hwnd_main == 0 | win32gui.IsWindowEnabled(self.__hwnd_main)):
+        if(self.__hwnd_main == 0 or False == win32gui.IsWindow(self.__hwnd_main)):
             return False    
         else:
             return True
