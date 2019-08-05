@@ -24,10 +24,10 @@ class CVDetector:
             if height is None or width is None:
                 break
 
-            __printscreen_numpy = cv2.resize(__printscreen_numpy,(int(width/2),int(height/2)))
-
-            CVDetector.swap_channels(__printscreen_numpy,0,2)
- 
+            __printscreen_numpy = self.preprocess_image(__printscreen_numpy,width,height)
+            
+            #todo: rozmiar filtra powoduje exception
+            #https://docs.opencv.org/3.1.0/d4/d13/tutorial_py_filtering.html
             
             cv2.imshow("Snake Window",__printscreen_numpy)
             if cv2.waitKey(25) & 0xFF == ord('q'):
@@ -35,10 +35,18 @@ class CVDetector:
                 break
 
     @staticmethod
-    def swap_channels(img,first_idx,second_idx):
+    def swap_channels(img: np.ndarray,first_idx: int,second_idx: int):
         channel = img[:,:,first_idx].copy()
         img[:,:,first_idx] = img[:,:,second_idx]
         img[:,:,second_idx] = channel
+
+    def preprocess_image(self,image: np.ndarray,width: int,height: int):
+        image = cv2.resize(image,(int(width/2),int(height/2)))
+        CVDetector.swap_channels(image,0,2)
+        image = cv2.medianBlur(image,5)
+        ret,image = cv2.threshold(image,127,255,cv2.THRESH_BINARY)
+        image = cv2.Canny(image,100,200)
+        return image
 
     def __init__(self):
         pass
