@@ -3,6 +3,7 @@ from open_snake import *
 import time
 from movement import *
 from multiprocessing import Process
+import subprocess
 
 def main():
 
@@ -19,16 +20,15 @@ def main():
         print(handler.Height())
 
         time.sleep(3)
-
-        Movement.move_left()
+        
+        Movement.move_left(handler)
         p1=Process(target=ImageDetection.main_loop(handler))
+
         p1.start()
 
-        Movement.move_left()
-        Movement.move_right()
-        Movement.move_up()
-        Movement.move_down()
-        time.sleep(3)
+
+
+        time.sleep(10)
     except():
         print("Error")
     finally:
