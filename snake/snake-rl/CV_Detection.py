@@ -8,7 +8,9 @@ class CVDetector:
     def main_loop(self, app_handle: AppHandler):
         if(app_handle == 0):
             raise Exception("wrong handler format")
-        __main_window = cv2.namedWindow("Snake Window")
+
+        __window_name = "Snake Window"
+        __main_window = cv2.namedWindow(__window_name)
 
         while(app_handle.IsOpen()):
             rect = app_handle.Rect()
@@ -29,8 +31,9 @@ class CVDetector:
             #todo: rozmiar filtra powoduje exception
             #https://docs.opencv.org/3.1.0/d4/d13/tutorial_py_filtering.html
             
-            cv2.imshow("Snake Window",__printscreen_numpy)
-            if cv2.waitKey(25) & 0xFF == ord('q'):
+            cv2.imshow(__window_name,__printscreen_numpy)
+            if (cv2.waitKey(25) and 0xFF == ord('q')):
+                x = cv2.getWindowImageRect(__window_name)
                 cv2.destroyAllWindows()
                 break
 

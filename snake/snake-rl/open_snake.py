@@ -51,7 +51,7 @@ class AppHandler:
         return win32gui.GetWindowRect(self.__hwnd_main)
 
     def IsOpen(self):
-        if(self.__hwnd_main == 0 or False == win32gui.IsWindow(self.__hwnd_main)):
+        if(self.__hwnd_main == 0 or False == win32gui.IsWindow(self.__hwnd_main) or False == (win32gui.IsWindowVisible(self.__hwnd_main) and win32gui.IsWindowEnabled(self.__hwnd_main))):
             return False    
         else:
             return True

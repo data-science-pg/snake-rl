@@ -2,7 +2,7 @@ from CV_Detection import *
 from open_snake import *
 import time
 from movement import *
-from multiprocessing import Process
+from threading import Thread
 import subprocess
 
 def main():
@@ -22,13 +22,19 @@ def main():
         time.sleep(3)
         
         Movement.move_left(handler)
-        p1=Process(target=ImageDetection.main_loop(handler))
+        p1=Thread(target=ImageDetection.main_loop(handler))
 
         p1.start()
 
 
-
-        time.sleep(10)
+        Movement.move_left(handler)
+        time.sleep(2)
+        Movement.move_left(handler)
+        time.sleep(2)
+        Movement.move_left(handler)
+        time.sleep(2)
+        Movement.move_left(handler)
+        time.sleep(2)
     except():
         print("Error")
     finally:
