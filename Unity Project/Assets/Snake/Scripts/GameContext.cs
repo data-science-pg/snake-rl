@@ -19,16 +19,21 @@ public class GameContext : MonoBehaviour, IInputListener
     {
 	    inputDevice = new KeyboardInputDevice {listener = this};
 	    ResetGame();
+	    StartCoroutine(LoopTicks());
+    }
+
+    private IEnumerator LoopTicks()
+    {
+	    while (true)
+	    {
+		    GameTick();
+		    yield return new WaitForSeconds(0.5f);
+	    }
     }
 
     private void Update()
     {
-	    inputDevice.UpdateInput();
-	    if (inputDevice.AnyKeyDown())
-	    {
-		    GameTick();
-	    }
-        
+	    inputDevice.UpdateInput();        
 }
 
     private void GameTick()

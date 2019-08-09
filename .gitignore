@@ -1,12 +1,14 @@
-"Unity Project/Library/*"
-"Unity Project/UnityPackageManager/*"
-"Unity Project/obj/*"
-"Unity Project/*.sln"
-"Unity Project/*.csproj"
-"Unity Project/Temp/*"
-"Unity Project//.idea/*"
-"Unity Project//.gradle/*"
-"Unity Project/*DotSettings.user"
-"Unity Project/Build/*"
-
 snake/snake-rl/__pycache__/*
+Unity Project/Library/
+Unity Project/Library/*
+Unity Project/UnityPackageManager/*
+Unity Project/obj/*
+Unity Project/*.sln
+Unity Project/*.csproj
+Unity Project/Temp/*
+Unity Project//.idea/*
+Unity Project//.gradle/*
+Unity Project/*DotSettings.user
+Unity Project/Build/*
+Unity Project/.idea/
+Unity Project/Logs/
